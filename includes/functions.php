@@ -10,7 +10,6 @@ function get_single_video($pdo, $vid) {
     while($row = $get_video->fetch(PDO::FETCH_ASSOC)) {
         $results[] = $row;
 
-        // you could run subresult queries here - just write another function and append.
     }
 
     return $results;

@@ -10,6 +10,7 @@
             videotitle : "",
             videosource : "",
             videodescription : "",
+            videogenre : "",
             showDetails : false
         },
 
@@ -19,7 +20,7 @@
 
         methods : {
             fetchMore(e) {
-                this.fetchMovieData(e.currentTarget.dataset.movie); // this will be a number (id)
+                this.fetchMovieData(e.currentTarget.dataset.movie);
             },
 
             loadMovie(e) {
