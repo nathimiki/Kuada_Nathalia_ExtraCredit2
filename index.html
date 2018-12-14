@@ -13,11 +13,13 @@
         <h4 class="welcome-message"> {{ mainmessage }}</h4>
         <ul>
             <li v-for="video in videodata">
-                <button :data-movie="video.id" v-on:click="fetchMore" class="more-details">More Details...</button>
+                <button :data-video="video.id" v-on:click="fetchMore" class="more-details">More Details...</button>
                 <a :href="video.vid_path" v-on:click="loadMovie">
                     <img :src="'images/' + video.vid_thumb" alt="">
                 </a>
-                <p class="movie-genre">{{ video.vid_genre }}</p>  <!-- add a field to the DB (or subquery another table) and plug data in -->
+                <p class="movie-genre">
+                    {{ video.vid_genre }}
+                </p>  <!-- add a field to the DB (or subquery another table) and plug data in -->
             </li>
         </ul>
 
@@ -32,9 +34,22 @@
                 <p> {{ videodescription }} </p>
             </div>
         </section>
+
+        <section class="hidden-more" :class="{'show-more' : showMore}">
+            <a href="#" class="closeBox" v-on:click="closeMore">X</a>
+            <img :src="'images/' + image1" alt="Image 1">
+            <img :src="'images/' + image2" alt="Image 2">
+            <img :src="'images/' + image3" alt="Image 3">
+            <p class="movie-details">
+                {{ synopsis }}
+            </p>
+        </section>
+
         <div class="up-arrow">
-            <span v-on:click="scrollBackUp" :class="{'show-scroller': showDetails }">^</span>
+            <span v-on:click="scrollBackUp" :class="{'show-close': showDetails }">^</span>
         </div>
+
+
     </main>
     <script src="js/main.js"></script>
 </body>

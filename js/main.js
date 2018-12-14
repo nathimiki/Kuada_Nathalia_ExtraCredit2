@@ -10,7 +10,12 @@
             videotitle : "",
             videosource : "",
             videodescription : "",
-            videogenre : "",
+            videogenre: "",
+            image1 : "",
+            image2 : "",
+            image3 : "",
+            synopsis: "",
+            showMore : false,
             showDetails : false
         },
 
@@ -19,9 +24,6 @@
         },
 
         methods : {
-            fetchMore(e) {
-                this.fetchMovieData(e.currentTarget.dataset.movie);
-            },
 
             loadMovie(e) {
                 // stub
@@ -46,21 +48,43 @@
                 this.videsource = "";
             },
 
+            
+            closeMore() {
+                this.showMore = false;
+            },
+
             fetchMovieData(movie) {
                 url = movie ? `./includes/index.php?movie=${movie}` : './includes/index.php';
 
-                fetch(url) // pass in the one or many query
+                fetch(url)
                 .then(res => res.json())
                 .then(data => {
                     if (movie) {
-                        // getting one movie, so use the single array
                         console.log(data);
                         this.singlemoviedata = data;
                     } else {
-                        // push all the video (or portfolio content) into the video array
                         console.log(data);
                         this.videodata = data;
                     }
+                })
+                .catch(function(error) {
+                    console.log(error);
+                });
+            },  
+
+            fetchMore(e) {
+                var more = e.currentTarget.dataset.video;
+                url = more ? `./includes/index.php?more=${more}` : './includes/index.php';
+                fetch(url) 
+                .then(res => res.json())
+                .then(data => {
+                  console.log(data);
+                  this.image1 = data[0].more_image1;
+                  this.image2 = data[0].more_image2;
+                  this.image3 = data[0].more_image3;
+                  this.synopsis = data[0].more_synopsis;
+                  
+                  this.showMore = true;
                 })
                 .catch(function(error) {
                     console.log(error);

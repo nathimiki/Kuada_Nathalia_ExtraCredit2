@@ -8,9 +8,15 @@ if (isset($_GET['movie'])) {
     echo json_encode($data);
 }
 
+elseif (isset($_GET['more'])) {
+    $data = get_more($conn, $_GET['more']);
+    echo json_encode($data);
+}
+
 else {
     // pass the connection and the movie id to a function
     $data = get_all_videos($conn);
     echo json_encode($data);
 }
+
 ?>
