@@ -12,10 +12,23 @@ main {
   padding-top: 20px;
 }
 
-.welcome-message { text-align: center; font-size: 2em; margin-bottom: 40px; }
+.welcome-message { 
+  text-align: center; 
+  font-size: 2em; 
+  margin-bottom: 40px; 
+}
 
-ul { width: 90; margin: 0 auto; text-align: center; padding-top: 20px; }
-ul li { display: inline-block; padding: 0 8px; }
+ul { 
+  width: 90; 
+  margin: 0 auto; 
+  text-align: center; 
+  padding-top: 20px; 
+}
+
+ul li { 
+  display: inline-block; 
+  padding: 0 8px; 
+}
 
 a {
   text-decoration: none;
@@ -28,11 +41,22 @@ a {
   padding-left: 8px;
 }
 
-a img { width: 180px; border: thin solid rgba(255, 255, 255, 0.8); border-radius: 4px; margin-bottom: 6px; }
+a img { 
+  width: 180px; 
+  border: thin solid rgba(255, 255, 255, 0.8); 
+  border-radius: 4px; 
+  margin-bottom: 6px; 
+}
 
-video { width: 100% }
+video { 
+  width: 100%;
+}
 
-.instructions { padding-top: 45px; text-align: center; font-size: 1.8em; }
+.instructions { 
+  padding-top: 45px; 
+  text-align: center; 
+  font-size: 1.8em; 
+}
 
 .hidden-movies {
   width: 80%;
@@ -43,21 +67,24 @@ video { width: 100% }
  }
 
  .hidden-more {
-  padding: 10%;
-  position: fixed;
-  background-color: rgba(45,45,45,0.95);
+  padding: 12%;
+  z-index: 999;
+  background: rgba(45,45,45,0.95);
   color: white;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 999;
-  pointer-events: none;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  transition: all 0.3s;
-  display: none;
+
+  //pointer-events: none;
+  //-webkit-transition: all 0.3s;
+  //-moz-transition: all 0.3s;
+  //transition: all 0.3s;
+
+  position: fixed;
   text-align: center;
+  //cursor: pointer;
+  display: none;
  }
 
  .closeBox{
@@ -70,12 +97,16 @@ video { width: 100% }
   top: 0;
   width: 70px;
   text-decoration: none;
-  cursor: pointer;
+  //cursor: pointer;
  }
 
- .show-movie { max-height: 1200px; }
+ .show-movie { 
+   max-height: 1200px; 
+  }
 
- .show-more { display: block;}
+ .show-more {
+   display: block;
+  }
 
  .more-details { 
     display: block;
@@ -105,9 +136,13 @@ video { width: 100% }
   margin-bottom: 12px;
 }
 
-.movie-details p { text-align: center; }
+.movie-details p { 
+  text-align: center; 
+}
 
-.up-arrow, .close-box{ text-align: center }
+.up-arrow{ 
+  text-align: center;
+}
 
 .up-arrow span {
   font-size: 2em;
@@ -129,15 +164,15 @@ video { width: 100% }
   display: none;
 }
 
-.show-scroller {display: inline-block !important; }
+.show-close {
+  display: inline-block !important; 
+}
 
-.show-close {display: inline-block !important; }
-
-footer {
+/*footer {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   text-align: center;
   padding: 40px 0 20px;
-}
+}*/
