@@ -18,19 +18,5 @@ First of all, you should clone the repo getting the code from the clone or downl
 - Visual Studio Code
 - Sass - CSS complier
 
-**Sass Example:**<br>
-
-```scss
-//sidebar
-$sidebar-header-color: #690800;
-$sidebar-color: #505050;
-$sidebar-selected-color: #383838;
-
-.sidebarC { 
-    background-color: $sidebar-color; 
-    color: $body-color;
-    position:relative;
-}
-```
 **Authors**<br>
 Nathalia Miki Kuada
